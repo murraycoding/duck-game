@@ -1,0 +1,199 @@
+:root {
+
+    /* Colors */
+    --black: #000000;
+    --white: #FFFFFF;
+    --green: green;
+    --blue: blue;
+    --yellow: yellow;
+    --orange: orange;
+
+    /* Sizes */
+    --large: 25px;
+
+    /* movement speed */
+    --baseSpeed: 100px;
+}
+
+* {
+    font-family: sans-serif;
+    color: var(--black);
+    margin: 0px;
+    padding: 0px;
+}
+
+/* Text Styles */
+h1 {
+    font-size: var(--large);
+    color: orchid;
+    padding-bottom: 10px;
+}
+
+/* General Styles */
+button {
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin: 0px 20px;
+}
+
+/* Section Styles */
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+#game-area {
+    display: grid;
+    margin: 20px;
+    width: auto;
+    height: 100%;
+    border: 5px solid var(--black);
+    border-radius: 10px;
+    background-color: var(--white);
+
+    grid-template-columns: 50% 50%;
+    grid-template-rows: auto 300px;
+
+
+    grid-template-areas:
+    "game game"
+    "leaderboard timer";
+
+    background-color: green;
+}
+
+#game-screen {
+    grid-area: game;
+    height: 800px;
+    position: relative;
+    margin: 20px;
+}
+
+.move-game-screen {
+    /* moves the game-screen slightly to make the illusion of movement */
+    animation-name: move-screen;
+    animation-duration: 10s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes move-screen {
+    from {transform: translateX(0px)}
+    to {transform: translatex(100px)}
+}
+
+#leaderboard {
+    grid-area: leaderboard;
+    background-color: blue;
+    color: var(--white);
+    padding: 30px;
+}
+
+#timer {
+    grid-area: timer;
+    background-color: var(--white);
+    border-radius: 5px;
+    border: 3px solid var(--black);
+    padding: 5px 10px;
+}
+
+#clock {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+    min-height: 100px;
+    width: auto;
+    border-radius: 5px;
+    border: 3px solid var(--black);
+    font-size: large;
+
+    & div {
+        display: flex;
+    }
+
+}
+
+/* Duck Styles */
+.duck-box {
+    display: block;
+    border: none;
+    height: 30px;
+    width: 100px;
+    position: absolute;
+
+    /* float animation */
+    animation-name: float;
+    animation-duration: 1s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+
+}
+
+.duck {
+    height: 30px;
+    width: 30px;
+    background-color: yellow;
+}
+
+.racing-ducks-1 {
+    animation-name: racing-ducks-1;
+    animation-duration: 15s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes racing-ducks-1 {
+    0% {transform: translateX(0px)}
+    100% {transform: translate(100px)}
+}
+
+.racing-ducks-2 {
+    animation-name: racing-ducks-2;
+    animation-duration: 15s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes racing-ducks-2 {
+    0% {transform: translateX(0px)}
+    100% {transform: translate(200px)}
+}
+
+.racing-ducks-3 {
+    animation-name: racing-ducks-3;
+    animation-duration: 15s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes racing-ducks-3 {
+    0% {transform: translateX(0px)}
+    100% {transform: translate(300px)}
+}
+
+
+@keyframes float {
+    0% {transform: translateY(0px);}
+    100% {transform: translateY(10px);}
+}
+
+
+
+/* Backound Styles */
+
+#grass {
+    background-color: var(--green);
+}
+
+#water {
+    background-color: var(--blue);
+}
