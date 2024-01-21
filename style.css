@@ -224,27 +224,22 @@ header {
 }
 
 .red {
-    color: var(--red);
     fill: var(--red)
 }
 
 .orange {
-    color: var(--orange);
     fill: var(--orange)
 }
 
 .green {
-    color: var(--green);
     fill: var(--green)
 }
 
 .blue {
-    color: var(--blue);
     fill: var(--blue)
 }
 
 .yellow {
-    color: var(--yellow);
     fill: var(--yellow)
 }
 

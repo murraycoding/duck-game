@@ -54,13 +54,13 @@ function create_duck(name, offset, number) {
 
     let colors = ["red", "orange", "green", "blue", "yellow"]
     var randomColor = colors[Math.floor(Math.random()*colors.length)]
+    
     fetch('duck.svg')
     .then(response => response.text())
     .then(svgData => {
         new_duck.innerHTML = svgData;
     });
 
-// new_duck.innerHTML = '<img src="duck.svg" alt="some file"  height="100" width="100"/>'
     // Classes & IDs
     new_duck_box.className = `duck-box`;
     new_duck.className = `duck`
