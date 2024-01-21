@@ -168,12 +168,6 @@ header {
 
 }
 
-.duck {
-    height: 30px;
-    width: 30px;
-    background-color: yellow;
-}
-
 .racing-ducks-1 {
     animation-name: racing-ducks-1;
     animation-duration: 15s;
@@ -230,23 +224,28 @@ header {
 }
 
 .red {
-    background-color: var(--red)
+    color: var(--red);
+    fill: var(--red)
 }
 
 .orange {
-    background-color: var(--orange)
+    color: var(--orange);
+    fill: var(--orange)
 }
 
 .green {
-    background-color: var(--green)
+    color: var(--green);
+    fill: var(--green)
 }
 
 .blue {
-    background-color: var(--blue)
+    color: var(--blue);
+    fill: var(--blue)
 }
 
 .yellow {
-    background-color: var(--yellow)
+    color: var(--yellow);
+    fill: var(--yellow)
 }
 
 button {
