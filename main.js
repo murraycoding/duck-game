@@ -52,7 +52,7 @@ function create_duck(name, offset, number) {
     const new_duck_box = document.createElement("div")
     const new_duck = document.createElement("div")
 
-    let colors = ["red", "orange", "green", "blue"]
+    let colors = ["red", "orange", "green", "blue", "yellow"]
     var randomColor = colors[Math.floor(Math.random()*colors.length)]
 
     // Classes & IDs
@@ -60,7 +60,7 @@ function create_duck(name, offset, number) {
     new_duck.className = `duck`
     new_duck.id = `duck${number}`
     new_duck.classList.add(randomColor)
-    
+
     // Positioning
     new_duck_box.style.top = `${offset}px`
     new_duck_box.style.animationDelay = `${Math.random()}s`
