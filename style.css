@@ -215,6 +215,13 @@ header {
 
 /* Backound Styles */
 
+#duckImage {
+    -webkit-transform: scaleX(-1);
+    -moz-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    transform: scaleX(-1);
+  }
+
 #grass {
     background-color: var(--green);
 }
