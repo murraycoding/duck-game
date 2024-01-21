@@ -22,7 +22,8 @@
         --blue: #0159e6;
         --yellow: #facc15;
         --orange: #f97316;
-        --red: #dc2626;
+        --red: #ef4444;
+        --pink: #ec4899;
 
         --ocean: #547ef3;
     }
@@ -39,6 +40,7 @@
         --yellow: #fde047;
         --orange: #fb923c;
         --red: #f87171;
+        --pink: #f472b6;
 
         --ocean: #4ea1ff;
     }
@@ -248,6 +250,10 @@ header {
 
 .yellow {
     fill: var(--yellow)
+}
+
+.pink {
+    fill: var(--pink)
 }
 
 button {

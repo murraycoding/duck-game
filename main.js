@@ -52,7 +52,7 @@ function create_duck(name, offset, number) {
     const new_duck_box = document.createElement("div")
     const new_duck = document.createElement("div")
 
-    let colors = ["red", "orange", "green", "blue", "yellow"]
+    let colors = ["red", "orange", "green", "blue", "yellow", 'pink']
     var randomColor = colors[Math.floor(Math.random()*colors.length)]
     
     fetch('duck.svg')
