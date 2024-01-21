@@ -3,10 +3,7 @@
     /* Colors */
     --black: #000000;
     --white: #FFFFFF;
-    --green: green;
-    --blue: blue;
-    --yellow: yellow;
-    --orange: orange;
+
 
     /* Sizes */
     --large: 25px;
@@ -15,11 +12,48 @@
     --baseSpeed: 100px;
 }
 
+@media (prefers-color-scheme: light) {
+    :root {
+
+        --bgColor: #FFFFFF;
+        --textColor: #000000;
+
+        --green: #16a34a;
+        --blue: #0284c7;
+        --yellow: #facc15;
+        --orange: #f97316;
+        --red: #dc2626;
+
+        --ocean: #7495f1;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+
+        --bgColor: #000000;
+        --textColor: #fcfcfc;
+        
+        --green: #4ade80;
+        --blue: #38bdf8;
+        --yellow: #fde047;
+        --orange: #fb923c;
+        --red: #f87171;
+
+        --ocean: #4ea1ff;
+    }
+}
+
 * {
     font-family: sans-serif;
     color: var(--black);
     margin: 0px;
     padding: 0px;
+}
+
+body {
+    background-color: var(--bgColor);
+    color: var(--textColor);
 }
 
 /* Text Styles */
@@ -51,7 +85,7 @@ header {
     height: 100%;
     border: 5px solid var(--black);
     border-radius: 10px;
-    background-color: var(--white);
+    background-color: var(--bg);
 
     grid-template-columns: 50% 50%;
     grid-template-rows: auto 300px;
@@ -60,8 +94,6 @@ header {
     grid-template-areas:
     "game game"
     "leaderboard timer";
-
-    background-color: green;
 }
 
 #game-screen {
@@ -69,6 +101,7 @@ header {
     height: 800px;
     position: relative;
     margin: 20px;
+    background-color: var(--ocean);
 }
 
 .move-game-screen {
@@ -186,8 +219,6 @@ header {
     100% {transform: translateY(10px);}
 }
 
-
-
 /* Backound Styles */
 
 #grass {
@@ -195,5 +226,25 @@ header {
 }
 
 #water {
-    background-color: var(--blue);
+    background-color: var(--ocean);
+}
+
+.red {
+    background-color: var(--red)
+}
+
+.orange {
+    background-color: var(--orange)
+}
+
+.green {
+    background-color: var(--green)
+}
+
+.blue {
+    background-color: var(--blue)
+}
+
+.yellow {
+    background-color: var(--yellow)
 }
