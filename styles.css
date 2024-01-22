@@ -44,12 +44,17 @@ header {
     padding: 20px;
 }
 
+:root {
+    --game-area-padding: 20px;
+    --game-area-border: 5px;
+}
+
 #game-area {
     display: grid;
-    margin: 20px;
+    margin: var(--game-area-padding);
     width: auto;
     height: 100%;
-    border: 5px solid var(--black);
+    border: var(--game-area-border) solid var(--black);
     border-radius: 10px;
     background-color: var(--white);
 
@@ -58,8 +63,8 @@ header {
 
 
     grid-template-areas:
-    "game game"
-    "leaderboard timer";
+        "game game"
+        "leaderboard timer";
 
     background-color: green;
 }
@@ -68,7 +73,28 @@ header {
     grid-area: game;
     height: 800px;
     position: relative;
-    margin: 20px;
+    /* margin: 20px; */
+
+    /* RIVER */
+    & .scrollingBackground {
+        position: relative;
+        margin: 0;
+        background: url("river.jpg") repeat-x;
+        height: 100%;
+        width: 100%;
+        background-size: 100% 100%;
+        animation: river 5s infinite linear normal none;
+    }
+}
+
+@keyframes river {
+    0% {
+        background-position: 0 0;
+    }
+
+    100% {
+        background-position: calc(-1 * (100vw - (var(--game-area-padding) * 2) - (var(--game-area-border) * 2))) 0;
+    }
 }
 
 .move-game-screen {
