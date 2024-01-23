@@ -4,12 +4,14 @@
     --black: #000000;
     --white: #FFFFFF;
 
-
     /* Sizes */
     --large: 25px;
 
     /* movement speed */
     --baseSpeed: 100px;
+  
+   --game-area-padding: 20px;
+    --game-area-border: 5px;
 }
 
 @media (prefers-color-scheme: light) {
@@ -82,10 +84,10 @@ header {
 
 #game-area {
     display: grid;
-    margin: 20px;
+    margin: var(--game-area-padding);
     width: auto;
     height: 100%;
-    border: 5px solid var(--black);
+    border: var(--game-area-border) solid var(--black);
     border-radius: 10px;
     background-color: var(--bg);
 
@@ -96,6 +98,8 @@ header {
     grid-template-areas:
     "game game"
     "leaderboard timer";
+
+    background-color: green;
 }
 
 #game-screen {
@@ -104,6 +108,28 @@ header {
     position: relative;
     margin: 20px;
     background-color: var(--ocean);
+    /* margin: 20px; */
+
+    /* RIVER */
+    & .scrollingBackground {
+        position: relative;
+        margin: 0;
+        background: url("river.jpg") repeat-x;
+        height: 100%;
+        width: 100%;
+        background-size: 100% 100%;
+        animation: river 5s infinite linear normal none;
+    }
+}
+
+@keyframes river {
+    0% {
+        background-position: 0 0;
+    }
+
+    100% {
+        background-position: calc(-1 * (100vw - (var(--game-area-padding) * 2) - (var(--game-area-border) * 2))) 0;
+    }
 }
 
 .move-game-screen {
@@ -223,6 +249,9 @@ header {
     -o-transform: scaleX(-1);
     transform: scaleX(-1);
   }
+
+
+/* Backound Styles */
 
 #grass {
     background-color: var(--green);
