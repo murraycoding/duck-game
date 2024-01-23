@@ -52,10 +52,20 @@ function create_duck(name, offset, number) {
     const new_duck_box = document.createElement("div")
     const new_duck = document.createElement("div")
 
+    let colors = ["red", "orange", "green", "blue", "yellow", 'pink']
+    var randomColor = colors[Math.floor(Math.random()*colors.length)]
+    
+    fetch('duck.svg')
+    .then(response => response.text())
+    .then(svgData => {
+        new_duck.innerHTML = svgData;
+    });
+
     // Classes & IDs
     new_duck_box.className = `duck-box`;
     new_duck.className = `duck`
     new_duck.id = `duck${number}`
+    new_duck.classList.add(randomColor)
 
     // Positioning
     new_duck_box.style.top = `${offset}px`

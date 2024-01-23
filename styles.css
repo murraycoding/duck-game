@@ -3,16 +3,49 @@
     /* Colors */
     --black: #000000;
     --white: #FFFFFF;
-    --green: green;
-    --blue: blue;
-    --yellow: yellow;
-    --orange: orange;
 
     /* Sizes */
     --large: 25px;
 
     /* movement speed */
     --baseSpeed: 100px;
+  
+   --game-area-padding: 20px;
+    --game-area-border: 5px;
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+
+        --bgColor: #FFFFFF;
+        --textColor: #000000;
+
+        --green: #008d39;
+        --blue: #0159e6;
+        --yellow: #facc15;
+        --orange: #f97316;
+        --red: #ef4444;
+        --pink: #ec4899;
+
+        --ocean: #547ef3;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+
+        --bgColor: #000000;
+        --textColor: #fcfcfc;
+        
+        --green: #4ade80;
+        --blue: #38bdf8;
+        --yellow: #fde047;
+        --orange: #fb923c;
+        --red: #f87171;
+        --pink: #f472b6;
+
+        --ocean: #4ea1ff;
+    }
 }
 
 * {
@@ -20,6 +53,11 @@
     color: var(--black);
     margin: 0px;
     padding: 0px;
+}
+
+body {
+    background-color: var(--bgColor);
+    color: var(--textColor);
 }
 
 /* Text Styles */
@@ -44,11 +82,6 @@ header {
     padding: 20px;
 }
 
-:root {
-    --game-area-padding: 20px;
-    --game-area-border: 5px;
-}
-
 #game-area {
     display: grid;
     margin: var(--game-area-padding);
@@ -56,15 +89,15 @@ header {
     height: 100%;
     border: var(--game-area-border) solid var(--black);
     border-radius: 10px;
-    background-color: var(--white);
+    background-color: var(--bg);
 
     grid-template-columns: 50% 50%;
     grid-template-rows: auto 300px;
 
 
     grid-template-areas:
-        "game game"
-        "leaderboard timer";
+    "game game"
+    "leaderboard timer";
 
     background-color: green;
 }
@@ -73,6 +106,8 @@ header {
     grid-area: game;
     height: 800px;
     position: relative;
+    margin: 20px;
+    background-color: var(--ocean);
     /* margin: 20px; */
 
     /* RIVER */
@@ -161,12 +196,6 @@ header {
 
 }
 
-.duck {
-    height: 30px;
-    width: 30px;
-    background-color: yellow;
-}
-
 .racing-ducks-1 {
     animation-name: racing-ducks-1;
     animation-duration: 15s;
@@ -212,6 +241,14 @@ header {
     100% {transform: translateY(10px);}
 }
 
+/* Backound Styles */
+
+#duckImage {
+    -webkit-transform: scaleX(-1);
+    -moz-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    transform: scaleX(-1);
+  }
 
 
 /* Backound Styles */
@@ -221,5 +258,40 @@ header {
 }
 
 #water {
-    background-color: var(--blue);
+    background-color: var(--ocean);
+}
+
+.red {
+    fill: var(--red)
+}
+
+.orange {
+    fill: var(--orange)
+}
+
+.green {
+    fill: var(--green)
+}
+
+.blue {
+    fill: var(--blue)
+}
+
+.yellow {
+    fill: var(--yellow)
+}
+
+.pink {
+    fill: var(--pink)
+}
+
+button {
+    border: 3px solid;
+    background-color: #bdbdbd;
+    border-color: #787878;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #787878;
 }
